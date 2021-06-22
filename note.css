@@ -1,0 +1,80 @@
+#tr{
+    text-align: center;
+} 
+
+#xx{
+    width: 100px;  
+    margin: 0px 15px 0px 15px;
+}
+
+.thead-dark{
+    position: sticky;
+    top: 0; z-index: 1;
+}
+.btdowload, .btndelete{
+    width: 30px;
+    text-align: center;
+}
+
+.checkBox{
+    width: 20px;
+}
+
+.title{
+    width: 200px;
+}
+.data{
+    height: 460px;
+    overflow-y: scroll;
+    border: 2px solid green;
+}
+.form-group{
+    margin: 0px 30px 0px 30px;
+}
+
+#exampleFormControlInput1{
+    width: 700px;
+}
+
+.custom-file-input, .custom-file-label, .custom-file{
+    width: 700px;
+}
+
+nav{
+    border-bottom: 1px solid blue;
+}
+
+table{
+    border-bottom: gray 1px solid;
+}
+th, td{
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #17a2b8;
+    height: 100vh;
+  }
+
+  .text-info1{
+      padding-left: 200px;
+  }
+
+  #login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+    height: 500px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+    height: 300px;
+  }
