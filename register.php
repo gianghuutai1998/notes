@@ -1,10 +1,10 @@
 <?php
     if(isset($_SESSION['user'])){
-        header("Location: notes.php");
+        header('location: index.php');
         die();
     }
 
-    require_once('dbfunction.php');
+    require_once('db/dbfunction.php');
 
     if(! empty($_POST)){
         $username = $_POST['username'];

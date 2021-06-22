@@ -6,7 +6,7 @@ session_start();
         die();
     }
 
-    require_once('dbfunction.php');
+    require_once('db/dbfunction.php');
 
     // Upload ghi chú bằng file txt 
     if(isset($_POST['upload'])){

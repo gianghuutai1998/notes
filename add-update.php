@@ -5,9 +5,9 @@
         die();
     }
 
-    require_once('dbfunction.php');
+    require_once('db/dbfunction.php');
     
-    // Redirect parameter notes.php
+    // Redirect parameter index.php
     $id = $_POST['checkBox'];
     $countCb = count($_POST['checkBox']);
     $data = getNote($id[0]);
@@ -15,20 +15,20 @@
     // Hủy $id khi chọn button Add
     if(isset($_POST['add'])) $id = 0;   
     
-    // Nếu số checkbox được chọn khác 1 khi chọn button Update -> Quay lại notes.php
+    // Nếu số checkbox được chọn khác 1 khi chọn button Update -> Quay lại index.php
     if(($countCb != 1) and (isset($_POST['update']))){
-        header('location: notes.php');
+        header('location: index.php');
         die();
     }
 
-    // Khi chọn button Delete -> Xóa tương ứng với các dòng đã chọn -> Quay lại notes.php
+    // Khi chọn button Delete -> Xóa tương ứng với các dòng đã chọn -> Quay lại index.php
     if(isset($_POST['delete'])){
         foreach($id as $x) deleteNote($x);
-        header('location: notes.php');
+        header('location: index.php');
         die();
     }
 
-    // Dowload file đã chọn ở notes.php
+    // Dowload file đã chọn ở index.php
     if(isset($_POST['dowload'])){
         if($countCb == 1){
             $n = getNote($id[0]);
@@ -37,7 +37,7 @@
             header('location: dowload.php');
             die();
         } else {
-            header('location: notes.php');
+            header('location: index.php');
             die();
         }
     }
@@ -53,7 +53,7 @@
         } else {
             addNote($_SESSION['user'], $title, $content);
         }
-        header('location: notes.php');
+        header('location: index.php');
         die();
     }
 ?>
@@ -78,7 +78,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="notes.php"><b>NOTES PAGE</b></a>
+        <a class="navbar-brand" href="index.php"><b>NOTES PAGE</b></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="logout.php">
