@@ -41,6 +41,12 @@
             die();
         }
     }
+    // Lấy key tìm kiếm
+    if(isset($_POST['search'])){
+        $searchKey = $_POST['search'];
+        header('location: index.php?searchKey='.$_POST['searchKey']);
+        die();
+    }
 
     //Redirect parameter #
     $idUpdate = $_POST['idUpdate'];
@@ -93,7 +99,7 @@
             <label> Title </label>
             <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Nhập tiêu đề" value="<?php echo $data['title']; ?>"><br><br>
             <label> Content </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Nhập nội dung" name="content"><?php echo $data['content']; ?></textarea><br>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="12" placeholder="Nhập nội dung" name="content"><?php echo $data['content']; ?></textarea><br>
             <input id='xx' class="btn btn-primary" type="submit" value="Save">
         </form><br>
     </div>

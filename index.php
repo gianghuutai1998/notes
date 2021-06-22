@@ -26,7 +26,9 @@ session_start();
         } else echo "Choose file upload!";
     }
 
-    $list = getNotes($_SESSION['user']);
+    // Hiển thị theo key tìm kiếm, nếu key rỗng -> hiển thị toàn bộ
+    $key = isset($_GET['searchKey'])?$_GET['searchKey']:'';
+    $list = search($_SESSION['user'], $key);
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +51,7 @@ session_start();
 <body>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><b>NOTES PAGE</b></a>
+            <a class="navbar-brand" href="index.php"><b>NOTES PAGE</b></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto"></ul>
                 <form class="form-inline my-2 my-lg-0" method="get" action="logout.php">
@@ -88,6 +90,8 @@ session_start();
                 <input id="xx" class='btn btn-primary' type="submit" name="update" value="Update">
                 <input id="xx" class='btn btn-primary' type="submit" name="delete" value="Delete">
                 <input id="xx" class='btn btn-primary' type="submit" name="dowload" value="Dowload">
+                <input type="text" name="searchKey" placeholder="Search here...">
+                <input id="xx" class='btn btn-primary' type="submit" name="search" value="Search">
             </div>
         </form>
         <hr>

@@ -35,7 +35,7 @@ ALTER TABLE note ADD CONSTRAINT user FOREIGN KEY(username) REFERENCES user(usern
     Đăng xuất                                                                                               
     - Hủy SESSION['User'] và trở về trang Login.                                                            
                                                                                                             
-### NOTES ###########################################################                                       
+### INDEX ###########################################################                                       
     Trang chính Ghi chú                                                                                     
     - Hiển thị danh sách ghi chú.                                                                           
     - Thêm ghi chú, chọn Add để thực hiện                                                                                      
@@ -49,5 +49,8 @@ ALTER TABLE note ADD CONSTRAINT user FOREIGN KEY(username) REFERENCES user(usern
     Trang nhập thông tin khi tạo mới hoặc sửa ghi chú được chọn ở Notes                                     
     - Tiêu đề không được bỏ trống.                                                                          
     - Lưu ghi chú mới / cập nhật ghi chú.                                                                   
-    - Sau khi lưu thành công sẽ chuyển về trang Notes.                                                      
+    - Sau khi lưu thành công sẽ chuyển về trang Notes.              
+
+### SEARCH ######################################################     
+    Tìm kiếm các ghi chú theo key                                     
                                                                                                             

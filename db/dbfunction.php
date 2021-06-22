@@ -82,6 +82,16 @@
         $sql = "DELETE FROM note WHERE username = '$username'";
         execute($sql);
     }
+
+    function search($username, $key = ''){
+        if($key != ''){
+            $sql = "SELECT * FROM note WHERE (id LIKE '%$key%' OR title LIKE '%$key%' 
+                OR content LIKE '%$key%') AND username = '$username'";
+        } else {
+            $sql = "SELECT * FROM note WHERE username = '$username'";
+        }
+        return executeResult($sql);
+    }
     
     ### FILE ##################################################
     
